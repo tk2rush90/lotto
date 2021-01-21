@@ -1,0 +1,44 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  @include flex(center, null, column);
+  @include padding(45px 0);
+}
+
+// ball container
+.lotto-ball-container {
+  @include flex(center, center);
+
+  @include under(600px) {
+    @include flex(flex-start, center);
+    max-width: 170px;
+  }
+}
+
+// button
+app-lotto-button {
+  margin-top: 45px;
+}
+
+// ball
+app-lotto-ball {
+  width: 50px;
+
+  @include under(600px) {
+    &:nth-child(n + 4) {
+      margin-top: 10px;
+    }
+  }
+}
+
+// ball spaces
+app-lotto-ball + app-lotto-ball {
+  margin-left: 10px;
+
+  @include under(600px) {
+    &:nth-child(4) {
+      margin-left: 0;
+    }
+  }
+}

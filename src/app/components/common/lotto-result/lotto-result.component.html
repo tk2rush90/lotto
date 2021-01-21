@@ -1,0 +1,21 @@
+<!-- bar -->
+<app-bar></app-bar>
+
+<!-- container -->
+<div class="lotto-container">
+  <!-- header -->
+  <app-lotto-result-header></app-lotto-result-header>
+
+  <!-- rank results -->
+  <app-lotto-rank-result
+    *ngFor="let item of ranks"
+    [rank]="item.rank"
+    [count]="item.count"></app-lotto-rank-result>
+
+  <!-- round results -->
+  <app-lotto-match-result
+    *ngFor="let item of displayingHistories; let index = index"
+    [chosenNumbers]="chosenNumbers"
+    [history]="item"
+    [round]="totalHistories - index"></app-lotto-match-result>
+</div>

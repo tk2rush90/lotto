@@ -1,0 +1,54 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  @include flex(center, null, column);
+  @include padding(45px 0);
+}
+
+// numbers container
+.lotto-container {
+  @include flex(center, null, column);
+  @include rect(332px, 165px);
+
+  @include under(600px) {
+    @include flex(flex-start, initial, initial);
+    @include rect(calc((28px * 5) + (10px * 4)), auto);
+  }
+}
+
+app-manual-number + app-manual-number {
+  margin-top: 10px;
+
+  &:nth-child(5n + 1) {
+    margin-top: 0;
+
+    // remove margin left for every line starting numbers for mobile view
+    @include under(600px) {
+      margin-left: 0;
+    }
+  }
+
+  @include under(600px) {
+    // add margin left for mobile view
+    margin-left: 10px;
+    margin-top: 0;
+
+    // in mobile view,
+    // add margin top for every numbers after index 6
+    &:nth-child(n + 6) {
+      margin-top: 10px;
+    }
+  }
+}
+
+app-manual-number {
+  &:nth-child(n + 6) {
+    margin-left: 10px;
+  }
+}
+
+// button space
+app-lotto-button {
+  margin-top: 45px;
+}

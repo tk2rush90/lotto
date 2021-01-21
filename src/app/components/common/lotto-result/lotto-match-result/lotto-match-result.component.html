@@ -1,0 +1,28 @@
+<h6>
+  {{round}}회
+</h6>
+
+<!-- ball container -->
+<div class="lotto-ball-container">
+  <!-- common balls -->
+  <app-lotto-ball
+    *ngFor="let item of commonBalls"
+    [matchable]="true"
+    [matched]="chosenNumberMap[item.value]"
+    [color]="item.color">
+    {{item.value}}
+  </app-lotto-ball>
+
+  <!-- add icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+    <path id="ic_add_24px" d="M19,13H13v6H11V13H5V11h6V5h2v6h6Z" transform="translate(-5 -5)"/>
+  </svg>
+
+  <!-- bonus -->
+  <app-lotto-ball
+    [matchable]="true"
+    [matched]="chosenNumberMap[bonusBall.value]"
+    [color]="bonusBall.color">
+    {{bonusBall.value}}
+  </app-lotto-ball>
+</div>

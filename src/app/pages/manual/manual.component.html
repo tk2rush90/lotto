@@ -1,0 +1,10 @@
+<!-- manual picker -->
+<app-manual-picker
+  (showResult)="onShowResultClicked()"
+  (chosenNumbersChange)="onChosenNumberChanged($event)"
+  [chosenNumbers]="chosenNumbers"></app-manual-picker>
+
+<!-- result -->
+<app-lotto-result
+  *ngIf="showResult"
+  [chosenNumbers]="chosenNumbers"></app-lotto-result>

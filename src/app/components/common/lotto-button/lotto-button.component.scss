@@ -1,0 +1,38 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  @include rect(130px, 40px);
+  @include flex(center, space-between);
+  @include clickable();
+  user-select: none;
+  transition: background-color .12s;
+
+  &:hover {
+    background-color: rgba($illusion, .25);
+  }
+
+  &:active {
+    background-color: rgba($illusion, .5);
+  }
+}
+
+// bracket style
+.lotto-bracket {
+  @include rect(15px, 100%);
+  @include border(2px solid $illusion);
+
+  &.lotto-left-bracket {
+    @include borderRight(none);
+  }
+
+  &.lotto-right-bracket {
+    @include borderLeft(none);
+  }
+}
+
+// text
+.lotto-text {
+  @include nanumGothic;
+  font-weight: 700;
+}

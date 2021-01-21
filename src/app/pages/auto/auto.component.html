@@ -1,0 +1,9 @@
+<!-- auto picker -->
+<app-auto-picker
+  (ready)="onBallsReady($event)"
+  (rolling)="onRollingStart()"></app-auto-picker>
+
+<!-- result -->
+<app-lotto-result
+  *ngIf="showResult"
+  [chosenNumbers]="chosenNumbers"></app-lotto-result>

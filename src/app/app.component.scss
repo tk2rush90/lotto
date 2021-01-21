@@ -1,0 +1,11 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  @include padding(140px 0);
+  @include flex(flex-start, center);
+
+  @include under(768px) {
+    @include padding(50px 0);
+  }
+}

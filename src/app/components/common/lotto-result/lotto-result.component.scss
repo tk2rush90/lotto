@@ -1,0 +1,46 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  @include flex(center, null, column);
+  @include padding(0 50px);
+
+  @include under(600px) {
+    @include padding(0 20px);
+  }
+}
+
+// bar style
+app-bar {
+  width: 100%;
+}
+
+// result container
+.lotto-container {
+  @include padding(45px 0);
+  @include flex(center, null, column);
+  max-width: 350px;
+  width: 100%;
+}
+
+app-lotto-rank-result {
+  width: 100%;
+}
+
+app-lotto-match-result {
+  width: 100%;
+
+  @include under(600px) {
+    width: 214px;
+  }
+}
+
+// match result space
+app-lotto-match-result + app-lotto-match-result {
+  margin-top: 30px;
+}
+
+// match and rank space
+app-lotto-rank-result + app-lotto-match-result {
+  margin-top: 40px;
+}

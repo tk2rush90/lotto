@@ -1,0 +1,54 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  @include flex(stretch);
+  @include clickable();
+  user-select: none;
+  height: 25px;
+
+  &.lotto-selected {
+    background-color: $salmon;
+  }
+
+  &:not(.lotto-selected) {
+    &:hover {
+      background-color: rgba($salmon, 10%);
+    }
+
+    &:active {
+      background-color: rgba($salmon, 20%);
+    }
+  }
+}
+
+// bracket style
+.lotto-bracket {
+  @include rect(5px, 100%);
+  @include border(1px solid $salmon);
+
+  &.lotto-left-bracket {
+    @include borderRight(none);
+  }
+
+  &.lotto-right-bracket {
+    @include borderLeft(none);
+  }
+}
+
+// number container
+.lotto-container {
+  @include flex(center, center);
+  width: 18px;
+  font-size: 14px;
+  font-weight: 400;
+  color: $salmon;
+}
+
+:host {
+  &.lotto-selected {
+    .lotto-container {
+      color: $white;
+    }
+  }
+}

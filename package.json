@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:github": "ng build --prod --output-path=docs --deploy-url=/lotto/ --base-href=/blog && npm run copy:404",
+    "copy:404": "copy \".\\src\\404.html\" \".\\docs\\\""
   },
   "private": true,
   "dependencies": {

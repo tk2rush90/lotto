@@ -1,0 +1,13 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  @include flex(stretch, space-between);
+  height: 1px;
+}
+
+// dot
+.lotto-dot {
+  width: 2%;
+  background-color: $nero;
+}

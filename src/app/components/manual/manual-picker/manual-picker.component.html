@@ -1,0 +1,14 @@
+<!-- container -->
+<div class="lotto-container">
+  <!-- render numbers from 1 to 45 -->
+  <app-manual-number
+    (click)="onNumberClick(item)"
+    *ngFor="let item of numbers"
+    [selected]="hasSelected(item)"
+    [value]="item"></app-manual-number>
+</div>
+
+<!-- button -->
+<app-lotto-button (click)="onResultButtonClick()">
+  결과보기
+</app-lotto-button>

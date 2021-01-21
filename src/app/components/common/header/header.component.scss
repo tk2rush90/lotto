@@ -1,0 +1,49 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  @include flex(center, center, column);
+  @include rect(100%, 200px);
+}
+
+// title text
+h1 {
+  @include clickable();
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  user-select: none;
+  color: $nero;
+  transition: color .12s;
+
+  &:hover {
+    color: $illusion;
+  }
+
+  &:active {
+    color: darken($illusion, 10%);
+  }
+}
+
+// sub title in korean
+p {
+  font-size: 20px;
+  line-height: 23px;
+  margin-top: 5px;
+  font-weight: 700;
+  color: $nero;
+}
+
+// github anchor
+a {
+  @include flex(center, center);
+  font-size: 12px;
+  margin-top: 13px;
+  user-select: none;
+  color: $nero;
+}
+
+// icon space
+app-github-icon {
+  margin-right: 3px;
+}

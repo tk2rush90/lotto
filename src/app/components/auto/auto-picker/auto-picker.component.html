@@ -1,0 +1,13 @@
+<!-- balls container -->
+<div class="lotto-ball-container">
+  <app-lotto-ball
+    *ngFor="let item of lottoBalls"
+    [color]="item.color">
+    {{item.value}}
+  </app-lotto-ball>
+</div>
+
+<!-- re-roll button -->
+<app-lotto-button (click)="roll()">
+  재추첨
+</app-lotto-button>

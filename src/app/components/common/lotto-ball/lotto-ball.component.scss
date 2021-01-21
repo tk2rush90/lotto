@@ -1,0 +1,27 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  display: block;
+  border-radius: 50%;
+  color: $white;
+  background-color: $nero;
+
+  &.lotto-matchable {
+    background-color: $white-smoke3;
+  }
+}
+
+// inner pad to set padding
+.lotto-inner-pad {
+  @include paddingTop(100%);
+  position: relative;
+}
+
+// value wrapper
+span {
+  @include center;
+  position: absolute;
+  font-size: 18px;
+  font-weight: 700;
+}

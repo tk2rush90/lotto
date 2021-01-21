@@ -1,0 +1,22 @@
+<!-- top bar -->
+<app-bar></app-bar>
+
+<!-- container -->
+<div class="lotto-container">
+  <app-lotto-button [routerLink]="['/auto']">
+    자동추첨
+  </app-lotto-button>
+
+  <app-lotto-button [routerLink]="['/manual']">
+    수동선택
+  </app-lotto-button>
+</div>
+
+<!-- bottom bar -->
+<app-bar></app-bar>
+
+<div class="lotto-footer">
+  <p>
+    이 사이트는 실제 로또 결과를 예측하지 못합니다
+  </p>
+</div>

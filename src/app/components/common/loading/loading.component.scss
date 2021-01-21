@@ -1,0 +1,27 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  @include flex(center, center);
+  @include rect(100%, 120px);
+}
+
+// inner container
+.lotto-container {
+  @include flex(center, space-between);
+  margin: 0 5px;
+  width: 135px;
+}
+
+// span size
+span {
+  font-size: 12px;
+  color: $salmon;
+}
+
+// brackets
+span {
+  &:first-child, &:last-child {
+    font-size: 14px;
+  }
+}

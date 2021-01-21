@@ -1,0 +1,60 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  display: block;
+}
+
+// round label
+h6 {
+  @include nanumGothic;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 19px;
+  color: $nero;
+}
+
+// ball container
+.lotto-ball-container {
+  @include flex(center, space-between);
+  margin-top: 5px;
+
+  @include under(600px) {
+    @include flex(flex-start, flex-start);
+  }
+}
+
+// ball size
+app-lotto-ball {
+  width: 40px;
+
+  @include under(600px) {
+    &:nth-child(3) {
+      margin-right: calc(100% - 140px);
+    }
+
+    &:nth-child(n + 4) {
+      margin-top: 10px;
+    }
+  }
+}
+
+app-lotto-ball + app-lotto-ball {
+  @include under(600px) {
+    margin-left: 10px;
+
+    &:nth-child(4) {
+      margin-left: 0;
+    }
+  }
+}
+
+// add icon
+svg {
+  display: block;
+
+  @include under(600px) {
+    @include rect(14px, 40px);
+    margin: 10px 10px 0;
+  }
+}

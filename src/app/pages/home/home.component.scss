@@ -1,0 +1,38 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  @include flex(center, null, column);
+  @include padding(0 50px);
+  width: 100%;
+}
+
+// bar width
+app-bar {
+  width: 100%;
+}
+
+// buttons container
+.lotto-container {
+  @include padding(45px 0);
+  @include flex(center, null, column);
+}
+
+// button space
+app-lotto-button + app-lotto-button {
+  margin-top: 45px;
+}
+
+// footer
+.lotto-footer {
+  @include padding(45px 0);
+  @include flex(center, center);
+}
+
+// footer text
+p {
+  font-size: 12px;
+  color: $nero;
+  max-width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+<!-- main container -->
+<div class="lotto-container">
+  <!-- main header -->
+  <app-header></app-header>
+
+  <app-loading
+    *ngIf="loading; else content"></app-loading>
+
+  <ng-template #content>
+    <!-- input content -->
+    <ng-content></ng-content>
+  </ng-template>
+</div>
+
+<!-- right bar -->
+<div class="lotto-bar"></div>
