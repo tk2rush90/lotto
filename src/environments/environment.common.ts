@@ -1,5 +1,6 @@
 export const commonEnvironments = {
   previousPathKey: 'LOTTO_PREV_PATH',
+  githubUrl: 'https://github.com/tk2rush90',
   ballColors: [
     {
       range: [1, 10],
