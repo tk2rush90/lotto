@@ -19,6 +19,8 @@ export class LottoService {
   private _chances: LottoChance = {};
   // chosen numbers
   private _chosenNumbers$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+  // step percentage
+  private _stepPercentage = 1 / 45;
 
   constructor() {
   }
@@ -59,6 +61,7 @@ export class LottoService {
    */
   private _calculateChances(): void {
     const chances: LottoChance = {};
+    const original: LottoChance = {};
     let total = 0;
 
     // count for each number
@@ -78,6 +81,7 @@ export class LottoService {
       const index = parseInt(key, undefined);
 
       chances[index] = chances[index] / total;
+      chances[index] = this._stepPercentage + (this._stepPercentage - chances[index]);
 
       if (chances[index - 1]) {
         chances[index] += chances[index - 1];
