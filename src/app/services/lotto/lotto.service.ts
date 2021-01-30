@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {getHistories, getNumbers, LottoHistory} from '@lotto/utils/lotto.util';
+import {getHistories, LottoHistory} from '@lotto/utils/lotto.util';
 import {BehaviorSubject, Observable} from 'rxjs';
 
 export interface LottoChance {
@@ -11,8 +11,6 @@ export interface LottoChance {
   providedIn: 'root'
 })
 export class LottoService {
-  // numbers can be casted
-  private _numbers: number[] = getNumbers();
   // histories
   private _histories: LottoHistory[] = getHistories();
   // chances
@@ -36,7 +34,6 @@ export class LottoService {
    * choose numbers
    */
   chooseNumbers(): void {
-    this._numbers = getNumbers();
     this._histories = getHistories();
 
     const numbers: number[] = [];
@@ -65,13 +62,15 @@ export class LottoService {
 
     // count for each number
     this._histories.forEach(history => {
-      history.numbers.forEach(n => {
-        if (!chances[n]) {
-          chances[n] = 0;
-        }
+      [...history.numbers, history.bonus].forEach(n => {
+        if (n) {
+          if (!chances[n]) {
+            chances[n] = 0;
+          }
 
-        chances[n]++;
-        total++;
+          chances[n]++;
+          total++;
+        }
       });
     });
 
@@ -120,6 +119,10 @@ export class LottoService {
   private _removeChosenOne(chosen: number): void {
     this._histories.forEach(history => {
       history.numbers = history.numbers.filter(item => item !== chosen);
+
+      if (chosen === history.bonus) {
+        delete history.bonus;
+      }
     });
   }
 }

@@ -1,0 +1,35 @@
+@import "styles/mixins";
+@import "styles/props";
+
+:host {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    .lotto-info-container {
+      display: block;
+    }
+  }
+}
+
+svg {
+  @include box(14px);
+  display: block;
+}
+
+// info container
+.lotto-info-container {
+  @include padding(18px 10px);
+  display: none;
+  background-color: $nero;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 1.6;
+  box-shadow: 0 3px 6px rgba($black, .15);
+  width: 330px;
+  left: 50%;
+  margin-left: calc(-330px / 2);
+  bottom: calc(100% + 5px);
+  color: $white;
+  position: absolute;
+}

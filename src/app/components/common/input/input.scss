@@ -1,0 +1,40 @@
+@import "styles/mixins";
+@import "styles/props";
+
+// input field
+.scripter-input-field {
+  @include padding(0 15px);
+  @include border(2px solid $gainsboro);
+  background-color: $white;
+  border-radius: 6px;
+  height: 40px;
+  font-size: 14px;
+
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  &:not(:disabled) {
+    &:focus {
+      border-color: $maya-blue;
+    }
+  }
+
+  &::placeholder {
+    color: $gainsboro;
+  }
+
+  &.ng-touched, &.ng-dirty {
+    &.ng-invalid {
+      background-color: $coral-red;
+    }
+  }
+}

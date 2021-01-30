@@ -13,7 +13,7 @@ export function getNumbers(): number[] {
 
 export interface LottoHistory {
   numbers: number[];
-  bonus: number;
+  bonus?: number;
 }
 
 /**

@@ -58,7 +58,7 @@ export class LottoMatchResultComponent implements OnInit {
         return ball;
       });
 
-      this.bonusBall.setValue(this._history.bonus);
+      this.bonusBall.setValue(this._history.bonus as number);
     }
   }
 

@@ -121,7 +121,7 @@ export class LottoResultComponent implements OnInit, OnDestroy {
       }
 
       case 5: {
-        if (this._chosenNumberMap[history.bonus]) {
+        if (this._chosenNumberMap[history.bonus as number]) {
           this._2ndRank.count++;
         } else {
           this._3rdRank.count++;
