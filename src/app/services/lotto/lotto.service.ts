@@ -61,7 +61,6 @@ export class LottoService {
    */
   private _calculateChances(): void {
     const chances: LottoChance = {};
-    const original: LottoChance = {};
     let total = 0;
 
     // count for each number
