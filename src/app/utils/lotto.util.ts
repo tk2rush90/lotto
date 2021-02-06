@@ -22,6 +22,10 @@ export interface LottoHistory {
 export function getHistories(): LottoHistory[] {
   return [
     {
+      numbers: [14, 21, 35, 36, 40, 44],
+      bonus: 30,
+    },
+    {
       numbers: [13, 18, 30, 31, 38, 41],
       bonus: 5,
     },
