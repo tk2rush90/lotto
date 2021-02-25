@@ -61,7 +61,7 @@ export class LottoService {
     } else {
       const ranks = this._calculateCountsForRanks(this._createChosenNumberMap(numbers));
 
-      if (ranks._5thRank.count < 5) {
+      if (ranks._5thRank.count < 9) {
         this._chosenNumbers$.next(numbers);
       } else {
         setTimeout(() => {
@@ -80,7 +80,7 @@ export class LottoService {
 
     // count for each number
     this._histories.forEach(history => {
-      [...history.numbers, history.bonus].forEach(n => {
+      [...history.numbers].forEach(n => {
         if (n) {
           if (!chances[n]) {
             chances[n] = 0;
